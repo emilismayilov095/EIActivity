@@ -11,7 +11,7 @@ public class EIActivity {
 
 extension EIActivity {
     public func show(color: UIColor = .white, style: UIActivityIndicatorView.Style = .large) {
-        if let topViewController = UIApplication.shared.firstKeyWindow?.rootViewController {
+        if let topViewController = UIApplication.shared.firstKeyWindow?.rootViewController?.presentedViewController {
             let view = ActivityView(frame: topViewController.view.frame, color: color, style: style)
             view.tag = 999
             topViewController.view.addSubview(view)
